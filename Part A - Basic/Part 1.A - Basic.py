@@ -1,12 +1,12 @@
 #Part A: Basic Program 
 
-count = 0
-count1 = 0
-count2 = 0
-count3 = 0
-count4 = 0
-marks = int()
-while marks >= 0:
+count = 0       #this count is used to print the total number of students who had written the exam.
+count1 = 0      #To count the students who take marks in between 0 and 29
+count2 = 0      #To count the students who take marks in between 30 and 39
+count3 = 0      #To count the students who take marks in between 40 and 69
+count4 = 0      #To count the students who take marks in between 70 and 100
+marks = int()   #This is also equals to marks = 0
+while marks >= 0: #i have repeated following loop using marks >= 0
     marks = int(input("Enter Mark: "))
     
     if marks >= 0 and marks <= 29:
@@ -25,8 +25,8 @@ while marks >= 0:
 
 print("\n0-29     ",end="")
 for i in range(0,count1):
-    print(i,end="")
-print("\r")
+    print("*",end="") #by using end='' . i have printed "*" in same line.
+print("\r")         #Without the use of end='' . it will print "*" vertically.
 
 print("30-39    ",end="")
 for j in range(0,count2):

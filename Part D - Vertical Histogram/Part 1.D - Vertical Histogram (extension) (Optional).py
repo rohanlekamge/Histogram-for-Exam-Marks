@@ -1,27 +1,27 @@
 #Part D: Vertical Histogram (Extension)
 
-count = 0
-total = 0
-target = 0
+count = 0   #this count is used to print the total number of students who had written the exam.
+total = 0   #this is used to find the average marks of these students
+target = 0  #i have used this count to print number of students who got marks above 40
 histogram = 0
-count1 = 0
-count2 = 0
-count3 = 0
-count4 = 0
+count1 = 0  #To count the students who take marks in between 0 and 29
+count2 = 0  #To count the students who take marks in between 30 and 39
+count3 = 0  #To count the students who take marks in between 40 and 69
+count4 = 0  #To count the students who take marks in between 70 and 100
 while True:
     try:
         marks = int(input("Enter Mark: "))
-    except ValueError:
+    except ValueError: #this checks is there a runtime Error called "ValueError"
         print("You Have Entered a Non-Numerical Character. Please Enter a Valid Character\n")
-        continue
+        continue       #goes straight to the first line
     else:
         #you have entered a numerical character
         #you're ready to exit the loop.
-        break
+        break          #this will end the loop and break from here
     
-maximum = int()
+maximum = int()        #This is also equals to marks = 0
 minimum = marks
-while marks >= 0:
+while marks >= 0:      #i have repeated following loop using marks >= 0
     if marks <= 100 and marks >= 0:
         if marks >= 40:
             target = target + 1
@@ -45,7 +45,7 @@ while marks >= 0:
         count4 = count4 + 1
 
 
-    while True:
+    while True:  #this is repeat of same loop in the above
         try:
             marks = int(input("Enter Mark: "))
         except ValueError:
@@ -56,10 +56,10 @@ while marks >= 0:
         
 print("\n: 0-29 : 30-39 : 40-69 : 70-100 :")
 
-list = [count1, count2, count3, count4]
+list = [count1, count2, count3, count4] #i have used a List called "list" to include counts in each mark catagory
 
-while max(list) >= histogram:
-    if count1 > histogram:
+while max(list) >= histogram:           #i have used max(list) to find the maximum in that list
+    if count1 > histogram:              #i have initially diclared histogram = 0    
         print("   *   ", end="")
     elif count1 <= histogram:
         print("       ", end="")
@@ -82,9 +82,10 @@ while max(list) >= histogram:
     histogram = histogram + 1
     print("\n")
 
-average = total / count
-print(count,"students in total.")
-print("Average Mark: ",average)
-print("Number of Students with a Pass Mark: ",target)
-print("Highest Mark: ",maximum)
-print("Lowest Mark: ",minimum)
+average = total / count             #Calculating the Average
+print(count,"students in total.")   #Printing the total number of students who wrote the exam
+print("Average Mark: ",average)     #print Average marks obtain by students in the exam
+print("Number of Students with a Pass Mark: ",target) #Number of students who got marks above 40
+print("Highest Mark: ",maximum)     #Highest mark obtained in the exam
+print("Lowest Mark: ",minimum)      #Lowest mark obtained in the exam
+ 
